@@ -20,8 +20,9 @@ public class TareaController {
 
     @PostMapping("/tareas/registrar")
     public String saveTarea(@RequestBody Tarea tarea) {
-
-        return iTareaServices.saveTarea(tarea);
+        tarea.setEstado(false);
+        iTareaServices.saveTarea(tarea);
+        return "Tarea guardada";
     }
 
     @PutMapping("/tareas/actualizar")

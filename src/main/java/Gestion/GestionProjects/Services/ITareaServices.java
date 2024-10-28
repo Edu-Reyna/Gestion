@@ -9,9 +9,9 @@ public interface ITareaServices {
 
     public List<Tarea> getAllTareas(Estudiante estudiante);
 
-    public String saveTarea(Tarea tarea);
+    public void saveTarea(Tarea tarea);
 
     public void deleteTarea(Long id);
 
-    public Tarea updateTarea(Tarea tarea);
+    public void updateTarea(Tarea tarea);
 }

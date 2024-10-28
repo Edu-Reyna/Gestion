@@ -32,6 +32,6 @@ public class CategoriaServices implements ICategoriaServices {
 
     @Override
     public Categoria getCategoria(Categoria categoria) {
-        return iCategoriaRepository.getCategoryId(categoria.getId_categoria());
+        return (Categoria) iCategoriaRepository.getCategoryId(categoria.getId_categoria());
     }
 }

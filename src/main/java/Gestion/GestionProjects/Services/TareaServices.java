@@ -20,18 +20,19 @@ public class TareaServices implements ITareaServices {
     }
 
     @Override
-    public String saveTarea(Tarea tarea) {
+    public void saveTarea(Tarea tarea) {
         tareaRepository.save(tarea);
-        return "";
+
     }
 
     @Override
     public void deleteTarea(Long id) {
 
+        tareaRepository.deleteById(id);
     }
 
     @Override
-    public Tarea updateTarea(Tarea tarea) {
-        return null;
+    public void updateTarea(Tarea tarea) {
+        tareaRepository.save(tarea);
     }
 }

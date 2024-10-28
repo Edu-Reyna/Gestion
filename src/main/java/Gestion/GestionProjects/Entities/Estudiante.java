@@ -19,7 +19,7 @@ public class Estudiante {
     private Long id_estudiante;
 
 
-    private String nombre;
+    private String email;
     private String contrasena;
 
     @OneToMany(mappedBy = "estudiante")
