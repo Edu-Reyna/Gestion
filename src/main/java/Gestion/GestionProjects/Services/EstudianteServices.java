@@ -6,7 +6,9 @@ import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -39,19 +41,16 @@ public class EstudianteServices implements IEstudianteServices {
         iEstudianteRepository.save(estudiante);
     }
 
+    @Transactional
     @Override
     public Estudiante getEstudiante(Estudiante estudiante) {
-        List<Estudiante> lista = iEstudianteRepository.findAll().stream()
-                .filter(n -> n.getEmail().equals(estudiante.getEmail())).toList();
-        if (lista.isEmpty()){
-            return null;
-        }
-        String passwordHash = lista.getFirst().getContrasena();
 
-        Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
-        if (argon2.verify(passwordHash, estudiante.getContrasena())) {
-            return lista.getFirst();
-        }
-        return null;
+        return iEstudianteRepository.getEstudentId(estudiante.getEmail(), estudiante.getContrasena());
+    }
+
+    @Override
+    public Estudiante getEstudentId(String id) {
+        Long id2 = Long.parseLong(id);
+        return (Estudiante) iEstudianteRepository.findAllById(Collections.singleton(id2));
     }
 }

@@ -14,4 +14,6 @@ public interface ITareaServices {
     public void deleteTarea(Long id);
 
     public void updateTarea(Tarea tarea);
+
+    public Tarea getTareaById(Long id);
 }

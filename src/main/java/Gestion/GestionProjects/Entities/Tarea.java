@@ -30,15 +30,28 @@ public class Tarea {
     @Enumerated(EnumType.STRING)
     private Prioridad prioridad;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "categoria_id", referencedColumnName = "id_categoria", nullable = true)
+    @JsonBackReference("tarea-categoria")
     private Categoria categoria;
 
     @ManyToOne
     @JoinColumn(name = "estudiante_id", referencedColumnName = "id_estudiante", nullable = true)
-    @JsonBackReference
+    @JsonBackReference("tarea-estudiante")
     private Estudiante estudiante;
 
-
     private boolean estado;
+
+    @Override
+    public String toString() {
+        return "Tarea{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", fechaFin=" + fechaFin +
+                ", prioridad=" + prioridad +
+                ", categoriaId=" + (categoria != null ? categoria.getId_categoria() : "null") +
+                ", estudiante=" + estudiante +
+                ", estado=" + estado +
+                '}';
+    }
 }

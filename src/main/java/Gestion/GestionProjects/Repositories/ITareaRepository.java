@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface ITareaRepository extends JpaRepository<Tarea, Long> {
 
-    @Procedure(name = "obtener_tareas_por_estudiante")
-    List<Tarea> getTareas(@Param("estudiante") Long idEstudiante);
+    @Procedure(name = "getAllTaskId")
+    List<Tarea> getAllTaskId(@Param("estu") Long idEstudiante);
 
 }

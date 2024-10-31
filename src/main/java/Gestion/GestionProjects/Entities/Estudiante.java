@@ -16,6 +16,7 @@ public class Estudiante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_estudiante")
     private Long id_estudiante;
 
 
@@ -23,7 +24,7 @@ public class Estudiante {
     private String contrasena;
 
     @OneToMany(mappedBy = "estudiante")
-    @JsonManagedReference
+    @JsonManagedReference("tarea-estudiante")
     private List<Tarea> tareas;
 
 }

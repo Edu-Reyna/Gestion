@@ -22,17 +22,13 @@ public class EstudianteController {
     @PostMapping("/usuarios/registrar")
     public String saveEstudiante(@RequestBody Estudiante estudiante) {
 
-        Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
-        String hash = argon2.hash(1, 1024, 1, estudiante.getContrasena());
-        estudiante.setContrasena(hash);
-
         iEstudianteServices.saveEstudiante(estudiante);
         return "Estudiante guardado";
 
     }
 
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public String getEstudiante(@RequestBody Estudiante estudiante) {
 
         Estudiante estudiante1 = iEstudianteServices.getEstudiante(estudiante);
@@ -40,7 +36,7 @@ public class EstudianteController {
         if (estudiante1 != null) {
             return estudiante1.getId_estudiante().toString();
         } else {
-            return "Estudiante no encontrado";
+            return null;
         }
     }
 

@@ -16,4 +16,5 @@ public interface IEstudianteServices {
 
     public Estudiante getEstudiante(Estudiante estudiante);
 
+    public Estudiante getEstudentId(String id);
 }
