@@ -10,10 +10,8 @@ import lombok.Setter;
 
 import java.util.Date;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter @Setter
+@AllArgsConstructor @NoArgsConstructor
 public class TareaDTO {
 
     private Long id;

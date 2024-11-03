@@ -12,7 +12,7 @@ import java.util.List;
 public interface ICategoriaRepository extends JpaRepository<Categoria, Long> {
 
     @Procedure(name = "GetAllCategorias")
-    List<Categoria> getAllCategorias();
+    List<Categoria> getAllCategorias(@Param("estu") Long id);
 
     @Procedure(name = "GetCategoryId")
     Categoria getCategoryId( @Param("categoria") Long id);

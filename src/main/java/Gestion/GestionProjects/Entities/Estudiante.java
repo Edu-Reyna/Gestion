@@ -27,4 +27,8 @@ public class Estudiante {
     @JsonManagedReference("tarea-estudiante")
     private List<Tarea> tareas;
 
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
+    @JsonManagedReference("categoria-estudiante")
+    private List<Categoria> categorias;
+
 }

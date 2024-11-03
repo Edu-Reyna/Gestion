@@ -1,5 +1,6 @@
 package Gestion.GestionProjects.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,9 +22,10 @@ public class Categoria {
 
     private String tipo_categoria;
 
-    @OneToMany(mappedBy = "categoria")
-    @JsonManagedReference("tarea-categoria")
-    private List<Tarea> tareas;
+    @ManyToOne
+    @JoinColumn(name = "estudiante_id", referencedColumnName = "id_estudiante", nullable = false)
+    @JsonBackReference("categoria-estudiante")
+    private Estudiante estudiante;
 
     @Override
     public String toString() {

@@ -1,0 +1,29 @@
+[33mcommit 9d859fab253f82b31e46f83b24d042978dc280c3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m
+Author: Eduardo Reyna <eduardor1901g@gmail.com>
+Date:   Thu Oct 31 09:29:17 2024 -0500
+
+    finalizacion del backend
+
+[33mcommit 6422789baab99aa2f77385397f0655ef4affc6e3[m
+Author: Eduardo Reyna <eduardor1901g@gmail.com>
+Date:   Mon Oct 28 18:01:41 2024 -0500
+
+    primera version del backend completo
+
+[33mcommit 7d28bf2891728352465fe3e639d1d2fa5935de02[m
+Author: Eduardo Reyna <eduardor1901g@gmail.com>
+Date:   Sun Oct 27 21:50:51 2024 -0500
+
+    desarrollo de conexion con BD
+
+[33mcommit ed1be8633ecccb8d3ba8b6a280be3a964944bcdd[m
+Author: Eduardo Reyna <eduardor1901g@gmail.com>
+Date:   Sun Oct 27 16:04:43 2024 -0500
+
+    cambios en el backend
+
+[33mcommit e281841979fb574b753f97bb4591b9c7dae908c7[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Eduardo Reyna <eduardor1901g@gmail.com>
+Date:   Sat Oct 26 20:47:47 2024 -0500
+
+    Agregar archivos para el proyecto

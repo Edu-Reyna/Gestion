@@ -32,7 +32,6 @@ public class Tarea {
 
     @ManyToOne
     @JoinColumn(name = "categoria_id", referencedColumnName = "id_categoria", nullable = true)
-    @JsonBackReference("tarea-categoria")
     private Categoria categoria;
 
     @ManyToOne

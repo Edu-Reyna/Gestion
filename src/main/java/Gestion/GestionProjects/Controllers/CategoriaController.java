@@ -1,5 +1,6 @@
 package Gestion.GestionProjects.Controllers;
 
+import Gestion.GestionProjects.DTO.CategoriaDTO;
 import Gestion.GestionProjects.Entities.Categoria;
 import Gestion.GestionProjects.Services.ICategoriaServices;
 import lombok.AllArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor @NoArgsConstructor
@@ -24,10 +26,23 @@ public class CategoriaController {
         return "Categoria guardada";
     }
 
-    @GetMapping("/categorias/lista")
-    public List<Categoria> getAllCategorias() {
+    @GetMapping("/categorias/lista/{id}")
+    public List<CategoriaDTO> getAllCategorias(@PathVariable("id") Long id) {
 
-        return iCategoriaServices.getAllCategorias();
+        var catego = iCategoriaServices.getAllCategorias(id);
+        List<CategoriaDTO> categoriasDTO = new ArrayList<>();
+
+        for (Categoria cat : catego) {
+
+            CategoriaDTO categoriaDTO = new CategoriaDTO(
+                    cat.getId_categoria(),
+                    cat.getTipo_categoria(),
+                    cat.getEstudiante()
+            );
+
+            categoriasDTO.add(categoriaDTO);
+        }
+        return categoriasDTO;
     }
 
     @DeleteMapping("/categorias/eliminar/{id}")

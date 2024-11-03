@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ICategoriaServices {
 
-    public List<Categoria> getAllCategorias();
+    public List<Categoria> getAllCategorias(Long id);
 
     public void saveCategoria(Categoria categoria);
 

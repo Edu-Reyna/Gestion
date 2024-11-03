@@ -31,9 +31,9 @@ public class TareaController {
     @PutMapping("/tareas/actualizar")
     public String updateTarea(@RequestBody Tarea tarea) {
 
-
         iTareaServices.updateTarea(tarea);
         return "Tarea actualizada";
+
     }
 
     @DeleteMapping("/tareas/eliminar/{id}")
@@ -49,7 +49,6 @@ public class TareaController {
         List<TareaDTO> tareasDTO = new ArrayList<>();
 
         for (Tarea tarea : tareas) {
-            String tipoCategoria = tarea.getCategoria() != null ? tarea.getCategoria().getTipo_categoria() : null;
             TareaDTO tareaDTO = new TareaDTO(
                     tarea.getId(),
                     tarea.getTitulo(),

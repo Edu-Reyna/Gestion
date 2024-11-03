@@ -16,8 +16,9 @@ public class CategoriaServices implements ICategoriaServices {
 
     @Transactional
     @Override
-    public List<Categoria> getAllCategorias() {
-        return iCategoriaRepository.getAllCategorias();
+    public List<Categoria> getAllCategorias(Long id) {
+
+        return iCategoriaRepository.getAllCategorias(id);
     }
 
     @Override
