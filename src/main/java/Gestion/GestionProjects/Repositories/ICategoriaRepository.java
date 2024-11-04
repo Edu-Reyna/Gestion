@@ -17,4 +17,7 @@ public interface ICategoriaRepository extends JpaRepository<Categoria, Long> {
     @Procedure(name = "GetCategoryId")
     Categoria getCategoryId( @Param("categoria") Long id);
 
+    @Procedure(name = "SaveCategory")
+    void saveCategory(@Param("cate") String categoria, @Param("estu") Long id);
+
 }

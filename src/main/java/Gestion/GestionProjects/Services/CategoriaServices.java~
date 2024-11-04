@@ -25,7 +25,7 @@ public class CategoriaServices implements ICategoriaServices {
     @Override
     public void saveCategoria(Categoria categoria) {
 
-        iCategoriaRepository.saveCategory(categoria.getTipo_categoria(), categoria.getEstudiante().getId_estudiante());
+        iCategoriaRepository.save(categoria);
     }
 
     @Override
