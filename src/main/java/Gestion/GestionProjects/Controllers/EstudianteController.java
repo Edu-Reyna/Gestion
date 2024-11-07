@@ -19,6 +19,7 @@ public class EstudianteController {
     @Autowired
     private IEstudianteServices iEstudianteServices;
 
+    //Funcion para registrar un estudiante en la base de datos
     @PostMapping("/usuarios/registrar")
     public String saveEstudiante(@RequestBody Estudiante estudiante) {
 
@@ -27,7 +28,7 @@ public class EstudianteController {
 
     }
 
-
+    //Funcion que busca encontrar un estudiante y devolver su id
     @PostMapping("/login")
     public String getEstudiante(@RequestBody Estudiante estudiante) {
 

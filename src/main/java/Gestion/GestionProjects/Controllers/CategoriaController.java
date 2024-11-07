@@ -19,6 +19,7 @@ public class CategoriaController {
     private ICategoriaServices iCategoriaServices;
 
 
+    //Funcion que recibe un objeto de tipo categoria y lo inserta en la base de datos
     @PostMapping("/categorias/registrar")
     public String saveCategoria(@RequestBody Categoria categoria) {
 
@@ -26,6 +27,7 @@ public class CategoriaController {
         return "Categoria guardada";
     }
 
+    //Funcion que recibe un id de estudiante y devuelve su respectiva lista de categorias
     @GetMapping("/categorias/lista/{id}")
     public List<CategoriaDTO> getAllCategorias(@PathVariable("id") Long id) {
 
@@ -45,6 +47,7 @@ public class CategoriaController {
         return categoriasDTO;
     }
 
+    //Funcion que recibe un id de categoria y lo elimina de la base de datos
     @DeleteMapping("/categorias/eliminar/{id}")
     public String deleteCategoria(@PathVariable("id") Long id) {
 
@@ -52,7 +55,8 @@ public class CategoriaController {
         return "Categoria eliminada";
     }
 
-    public Categoria getCategoria(Categoria categoria) {
+    //Funcion a futuro que recibe una categoria y se podria usar para actualizar la categoria en la base de datos
+    public Categoria getCategoria( @RequestBody Categoria categoria) {
 
         return iCategoriaServices.getCategoria(categoria);
     }

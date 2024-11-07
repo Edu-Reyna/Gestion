@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig {
 
+    //Funcion que utilizamos para conecar el front con el back en el puerto 5173
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer(){
